@@ -1,0 +1,14 @@
+nav>ul>li>a{
+    padding:18px;
+    
+    text-transform:uppercase;
+    text-decoration:none;
+    display:block;
+    color: white;
+  }
+  nav>ul {
+    text-align:right;
+  }
+  ul>li {
+    display:inline-block;
+  }
