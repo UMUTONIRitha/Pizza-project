@@ -1,3 +1,7 @@
+body{
+  background-color:black;
+  color: white;
+}
 #home{
     background-image: url(../img/backgroundhome.jpeg);
     background-size: cover;
@@ -22,6 +26,7 @@ nav>ul>li>a{
   h1{
     text-align: center;
     margin-top: 200px;
+    color: black;
   }
   #about{
     text-align: center;
