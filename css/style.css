@@ -1,6 +1,8 @@
 body{
   background-color:black;
   color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
 }
 #home{
     background-image: url(../img/backgroundhome.jpeg);
@@ -51,4 +53,5 @@ nav>ul>li>a{
   }
   footer{
     text-align: center;
+    font-family: 'Cookie', cursive;
   }
