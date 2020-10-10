@@ -26,9 +26,29 @@ nav>ul>li>a{
   h1{
     text-align: center;
     margin-top: 200px;
-    color: black;
+    color:black;
+    font-family: 'VT323', monospace;
+    font-size: 60px;
   }
   #about{
     text-align: center;
     margin-top: 20px;
+  }
+  #whatwehave{
+    text-align: center;
+    padding-top: 30px;
+  }
+  #order{
+    margin-top: 30px;
+  }
+  h2{
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    color: chocolate;
+  }
+  #contact{
+    margin-top: 30px;
+  }
+  footer{
+    text-align: center;
   }
