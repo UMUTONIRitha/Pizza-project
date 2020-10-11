@@ -1,55 +1,51 @@
+var sizePrice =[900,600,400]
+var deliverPrices=[0,100];
+$(document).ready(function(){
+ $('form#myform').submit(function(event){
+     event.preventDefault();
+     
+     var pizzaSize=parseInt($('#size').val());
+     var pizzaCrust=$('#crust').val();
+     var pizzaTop=$('#topping').val();
+     var pizzaQty=parseInt($('#quantity').val());
+     var pizzaPick=parseInt($('#delivery').val());
 
-var sizePrice = [800, 600, 400]
-var deliverPrice = [0, 100]
-$(document).ready(function () {
-    $('form#formone').submit(function (event) {
-        event.preventdefault();
-        var pizzaCrust = $('#crust').val();
-        var pizzaTopping = $('#topping').val();
-        var pizzaSize = $('#size').val();
-        var pizzaQuantity = parseInt($('#quantity').val());
-        var pizzaDeliver = parseInt($('#deliver').val());
+     var price=sizePrice[pizzaSize-1];
 
-        var price = sizePrice[pizzaSize - 1];
+     var DeliveryCost=deliverPrices[pizzaPick-1];
 
+     newOrder=new Order(pizzaSize,pizzaCrust,pizzaTop);
+     newTotal=new Total(price,pizzaQty,DeliveryCost);
 
-        var deliveryCost = deliverPrice[pizzaDeliver - 1];
-
-        newOrder = new Order(pizzaSize, pizzaCrust, pizzaTopping);
-        newTotal = new Total(price, pizzaQuantity, deliveryCost);
-
-        if (pizzaDeliver === 1) {
-            alert("Your order is " + newOrder.fullOrder() + "continue to see your total bill");
-            alert("Your bill is " + newTotal.finalTotal() + "you 'll receive your pizza in next few minutes");
-        }
-
-        else {
-            if (pizzaDeliver === 2) {
-                prompt("Enter your location");
-                alert("Your order has been received and it will be delivered,cotinue to see your bill");
-                alert("your order is " + newOrder.fullOrder() + "continue to see your total bill");
-                alert("your bill is " + newTotal.finalTotal() + " your pizza will be delivered in shortly");
-
-            }
-        }
-    });
-
+     if (pizzaPick===1){
+         alert(" order is "+newOrder.fullOrder() + " click ok to see your bill ");
+         alert(" bill is "+newTotal.finalTotal() + "your pizza is ready,pick it");
+     }
+     else{
+         if(pizzaPick===2){
+             prompt("enter location where you want your pizza to be delivered");
+             alert("your order has been received and it will be delivered,click ok to see full information of your order");
+             alert(" order is " +newOrder.fullOrder() + "click ok to see your bill");
+             alert(" bill is " +newTotal.finalTotal() + "your pizza will be delivered in 30minutes");
+         }
+     }
+ }) ;  
 });
-
-function Order(size, crust, toppings) {
-    this.size = size;
-    this.crust = crust;
-    this.toppings = toppings;
+function Order(size,crust,topping){
+    this.size=size;
+    this.crust=crust;
+    this.topping=topping;
 }
-Order.prototype.fullOrder = function () {
-    return this.type + "with the topping of " + this.toppings + "and " + this.crust + " as crust.";
+Order.prototype.fullOrder=function(){
+    return this.topping + " is topping of your pizza " + " and " + this.crust +" as crust ";
+
 };
+function Total(price,quantity,delivery){
+    this.price=price;
+    this.quantity=quantity;
+    this.delivery=delivery;
 
-function Total(price, quantity, delivery) {
-    this.price = price;
-    this.quantity = quantity;
-    this.delivery = delivery;
 }
-Total.prototype.finalTotal = function () {
-    return this.price * this.quantity + this.delivery;
+Total.prototype.finalTotal=function(){
+    return this.price*this.quantity+this.delivery;
 };
