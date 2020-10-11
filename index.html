@@ -80,51 +80,52 @@
         <section id="order">
 
             <h2>Make your Order</h2>
-            <div class="row">
-                <div class="col">
-                    <form action="" id="formone">
-                        <div class="form-group">
-                            <label for="select">Select kind of crust</label>
-                            <select name="" id="crust" class="form-control">
-                                <option value="crispy">Crispy pizza</option>
-                                <option value="gluten">Gluten-free pizza</option>
-                                <option value="stuffed">Stuffed pizza</option>
-                                <option value="focaccia">Focaccia</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="select">choose toppings you want on your pizza</label>
-                            <select name="" id="topping" class="form-control">
-                                <option value="onions">Onions</option>
-                                <option value="sausage">Sausage</option>
-                                <option value="mushrooms">Mushrooms</option>
-                                <option value="extra cheese">Extra Cheese</option>
-                        </div>
-                        </select>
-                        <div class="form-group">
-                            <label for="select">select size of your pizza</label>
-                            <select id="size" class="form-control">
-                                <option value="large">large......@800 RWF</option>
-                                <option value="medium">medium......@600RWF</option>
-                                <option value="small">small.....400RWF</option>
-                        </div>
-                        </select>
-                        <div class="form-group">
-                            <label for="number of pizza"> Enter number of pizza you want</label>
-                            <input type="number" id="quantity" class="form-control" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="select">select if you your pizza to be delivered</label>
-                            <select id="deliver" class="form-control">
-                                <option value="1">you will come to take it</option>
-                                <option value="2">it will be delivered to you</option>
-                        </div>
-                        </select>
+               <form id="myform">
+                   <div class="form-group">
+<label for="sel1">Select the size of your pizza</label>
+<select class="form-control" id="size">
+<option value="1">large@900</option>
+<option value="2">medium@600</option>
+<option value="3">small@400</option>
+</select>
+                   </div>
+                   <div class="form-group">
+<label for="sel1">Select the kind of crust you want</label>
+<select class="form-control" id="crust">
+    <option>Crispy</option>
+    <option>Stuffed</option>
+    <option>Gluten-free</option>
+    <option>Focaccia</option>
+</select>
+                   </div>
+                   <div class="form-group">
+                       <label for="sel1">Select the topping you want on your pizza</label>
+                       <select class="form-control" id="topping">
+                        <option>Onions</option>
+                        <option>Sausage</option>
+                        <option>Extra-cheese</option>
+                        <option>Mushrooms</option>
+                       </select>
+                   </div>
+                
+                   <div class="form-group" required>
+<label for="sel1">Number of pizza you want</label>
+<input type="number" id="quantity" class="form-control" min="1" required>
+                   </div>
+                   <div class="form-group" required>
+                       <label for="sel1">delivery option</label>
+                       <select class="form-control" id="delivery">
+                        <option value="1"> you will come to pick it</option>
+                        <option value="2">it will be delivered to you</option>
+                       </select>
 
-                        <button type="submit" id="confirm" class="btn btn-primary">confirm your order</button>
-
-                    </form>
-                </div>
+                   </div>
+                   <div class="form-group">
+<button type="submit" class="btn btn-primary"> confirm your order</button>
+                   </div>
+               </form>     
+                   
+                
 
         </section>
         <section id="contact">
